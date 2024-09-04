@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# 🌦️ Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+OpenWeather API を使用して世界の主要都市の天気を表示するシンプルなアプリケーションです。
 
-Currently, two official plugins are available:
+## 🚀 特徴
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 都市名で天気を検索
+- 🌡️ 現在の気温表示
+- 💧 湿度情報の表示
+- 🌬️ 風速情報の表示
+- 🎨 美しい UI デザイン
 
-## Expanding the ESLint configuration
+## 🛠️ 使用技術
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React 18.3.1
+- TypeScript 5.5.3
+- Vite 5.4.1
+- Tailwind CSS 3.4.10
+- React Icons 5.3.0
 
-- Configure the top-level `parserOptions` property like this:
+## 📦 主要コンポーネント
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Weather.tsx: メインの天気表示コンポーネント
+- App.tsx: アプリケーションのルートコンポーネント
+
+## 🏗️ プロジェクト構造
+
+```shell
+src/
+  ├── components/
+  │   └── Weather.tsx
+  ├── assets/
+  │   └── react.svg
+  ├── App.tsx
+  ├── index.css
+  └── main.tsx
+public/
+  └── vite.svg
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🔧 設定ファイル
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+tsconfig.json: TypeScript 設定
+vite.config.ts: Vite 設定
+tailwind.config.js: Tailwind CSS 設定
+eslint.config.js: ESLint 設定
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📝 TODO
+
+OpenWeather API との連携実装
+検索機能の実装
+エラーハンドリングの追加
+レスポンシブデザインの改善
+単体テストの追加
