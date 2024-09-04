@@ -40,15 +40,15 @@ public/
 
 ## 🔧 設定ファイル
 
-tsconfig.json: TypeScript 設定
-vite.config.ts: Vite 設定
-tailwind.config.js: Tailwind CSS 設定
-eslint.config.js: ESLint 設定
+- tsconfig.json: TypeScript 設定
+- vite.config.ts: Vite 設定
+- tailwind.config.js: Tailwind CSS 設定
+- eslint.config.js: ESLint 設定
 
 ## 📝 TODO
 
-OpenWeather API との連携実装
-検索機能の実装
-エラーハンドリングの追加
-レスポンシブデザインの改善
-単体テストの追加
+- [] OpenWeather API との連携実装
+- [] 検索機能の実装
+- [] エラーハンドリングの追加
+- [] レスポンシブデザインの改善
+- [] 単体テストの追加
