@@ -14,3 +14,16 @@ export interface WeatherInfoProps {
   label: string;
   unit: string;
 }
+
+export interface WeatherSearchHookResult {
+  weatherData: WeatherData | undefined;
+  errorMessage: string | null;
+  isLoading: boolean;
+  handleSearch: (city: string) => void;
+}
+
+export interface WeatherHookResult {
+  data: WeatherData | undefined;
+  error: Error | null;
+  isLoading: boolean;
+}

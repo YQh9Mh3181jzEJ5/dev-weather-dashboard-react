@@ -1,8 +1,11 @@
 import { useState, useCallback, useEffect } from "react";
 import { useWeather } from "./useWeather";
 import { DEFAULT_CITY } from "../constants/config";
+import { WeatherSearchHookResult } from "../type";
 
-export const useWeatherSearch = (initialCity: string = DEFAULT_CITY) => {
+export const useWeatherSearch = (
+  initialCity: string = DEFAULT_CITY
+): WeatherSearchHookResult => {
   const [city, setCity] = useState(initialCity);
   const { data: weatherData, error, isLoading } = useWeather(city);
   const [searchError, setSearchError] = useState<string | null>(null);
