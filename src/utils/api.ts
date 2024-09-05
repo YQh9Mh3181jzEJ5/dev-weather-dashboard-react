@@ -1,19 +1,21 @@
+import axios from "axios";
 import { WeatherData } from "../type";
+import { WEATHER_API_BASE_URL, WEATHER_API_KEY } from "../constants/config";
+
+const api = axios.create({
+  baseURL: WEATHER_API_BASE_URL,
+});
 
 export const fetchWeatherData = async (city: string): Promise<WeatherData> => {
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
-      import.meta.env.VITE_APP_ID
-    }`;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(
-        data.message || `Failed to fetch weather data for ${city}`
-      );
-    }
-
+    const response = await api.get("/weather", {
+      params: {
+        q: city,
+        units: "metric",
+        appid: WEATHER_API_KEY,
+      },
+    });
+    const data = response.data;
     return {
       icon: data.weather[0].icon,
       temperature: Math.floor(data.main.temp),
@@ -22,7 +24,12 @@ export const fetchWeatherData = async (city: string): Promise<WeatherData> => {
       location: data.name,
     };
   } catch (error) {
-    console.error("Error fetching weather data:", error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data.message ||
+          `Failed to fetch weather data for ${city}`
+      );
+    }
     throw error;
   }
 };
