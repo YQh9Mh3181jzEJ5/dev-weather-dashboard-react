@@ -3,10 +3,12 @@ import landscapeImage from "./assets/landscape.jpg";
 
 const App = () => {
   return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${landscapeImage})` }}
-    >
+    <div className="relative min-h-screen">
+      <img
+        src={landscapeImage}
+        alt="landscape"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-filter backdrop-blur-sm"></div>
       <div className="relative z-10">
         <Weather />
