@@ -1,32 +1,26 @@
 import { useState, useCallback, useEffect } from "react";
 import { useWeather } from "./useWeather";
+import { DEFAULT_CITY } from "../constants/config";
 
-export const useWeatherSearch = (initialCity: string = "tokyo") => {
-  const {
-    weatherData,
-    error: apiError,
-    isLoading,
-    fetchWeather,
-  } = useWeather();
+export const useWeatherSearch = (initialCity: string = DEFAULT_CITY) => {
+  const [city, setCity] = useState(initialCity);
+  const { data: weatherData, error, isLoading } = useWeather(city);
   const [searchError, setSearchError] = useState<string | null>(null);
 
-  const handleSearch = useCallback(
-    (city: string) => {
-      if (city.trim()) {
-        setSearchError(null);
-        fetchWeather(city);
-      } else {
-        setSearchError("Please enter a city name");
-      }
-    },
-    [fetchWeather]
-  );
+  const handleSearch = useCallback((newCity: string) => {
+    if (newCity.trim()) {
+      setSearchError(null);
+      setCity(newCity);
+    } else {
+      setSearchError("Please enter a city name");
+    }
+  }, []);
 
   useEffect(() => {
     handleSearch(initialCity);
   }, [handleSearch, initialCity]);
 
-  const errorMessage = searchError || apiError;
+  const errorMessage = searchError || (error as Error)?.message;
 
   return { weatherData, errorMessage, isLoading, handleSearch };
 };
