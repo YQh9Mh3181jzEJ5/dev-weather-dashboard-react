@@ -2,6 +2,8 @@
 
 OpenWeather API を使用して世界の主要都市の天気を表示するシンプルなアプリケーションです。
 
+URL: https://weather-app-ruby-nu.vercel.app/
+
 ## 🚀 特徴
 
 - 🔍 都市名で天気を検索
