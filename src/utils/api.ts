@@ -1,6 +1,6 @@
 import axios from "axios";
-import { WeatherData } from "../type";
-import { WEATHER_API_BASE_URL, WEATHER_API_KEY } from "../constants/config";
+import { WeatherData } from "@/type";
+import { WEATHER_API_BASE_URL, WEATHER_API_KEY } from "@/constants";
 
 const api = axios.create({
   baseURL: WEATHER_API_BASE_URL,

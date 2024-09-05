@@ -1,5 +1,5 @@
-import Weather from "./components/Weather/Weather";
-import landscapeImage from "./assets/landscape.jpg";
+import landscapeImage from "@/assets/landscape.jpg";
+import Weather from "@/components/Weather/Weather";
 
 const App = () => {
   return (

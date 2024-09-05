@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from "react";
-import { useWeather } from "./useWeather";
-import { DEFAULT_CITY } from "../constants/config";
-import { WeatherSearchHookResult } from "../type";
+import { useWeather } from "@/hooks";
+import { DEFAULT_CITY } from "@/constants";
+import { WeatherSearchHookResult } from "@/type";
 
 export const useWeatherSearch = (
   initialCity: string = DEFAULT_CITY

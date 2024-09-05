@@ -1,10 +1,9 @@
 import React from "react";
 import { WiHumidity, WiStrongWind } from "react-icons/wi";
-
-import SearchBar from "../SearchBar/SearchBar";
-import WeatherIcon from "./WeatherIcon";
-import WeatherInfo from "./WeatherInfo";
-import { useWeatherSearch } from "../../hooks/useWeatherSearch";
+import WeatherIcon from "@/components/Weather/WeatherIcon";
+import WeatherInfo from "@/components/Weather/WeatherInfo";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import { useWeatherSearch } from "@/hooks/useWeatherSearch";
 
 const Weather: React.FC = () => {
   const { weatherData, errorMessage, isLoading, handleSearch } =
