@@ -13,7 +13,7 @@ const Weather: React.FC = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-4 text-slate-200 text-center">
-        Let's check the weather now!
+        Your Weather, Right Now!
       </h1>
       <div className="flex flex-col max-w-md items-center justify-between gap-3 bg-gradient-to-br from-blue-700 to-purple-600 p-8 rounded-lg shadow-lg backdrop-blur-md">
         <SearchBar onSearch={handleSearch} />

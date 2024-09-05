@@ -1,4 +1,4 @@
-import { WeatherData } from "../type/weather";
+import { WeatherData } from "../type";
 
 export const fetchWeatherData = async (city: string): Promise<WeatherData> => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${

@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { fetchWeatherData } from "../utils/api";
-import { WeatherData } from "../type/weather";
+import { WeatherData } from "../type";
 
 export const useWeather = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);

@@ -11,14 +11,21 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   const handleSearch = () => {
     onSearch(inputValue);
+    setInputValue("");
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
   };
 
   const handleClearInput = () => {
     setInputValue("");
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -26,11 +33,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <div className="relative">
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search for a city..."
           className="bg-slate-100 py-2 px-6 pr-10 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
           aria-label="Search for a city"
           value={inputValue}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
         />
         <TiDeleteOutline
           className="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 cursor-pointer"
