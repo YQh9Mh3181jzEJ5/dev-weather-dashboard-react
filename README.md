@@ -1,6 +1,6 @@
 # 🌦️ WeatherNow
 
-OpenWeather API を使用して世界の主要都市の天気をリアルタイムで表示するアプリです。
+OpenWeather API を使用して世界の主要都市の天気をリアルタイムで表示するシンプルなアプリです。
 
 🌐 **デプロイ済みアプリ**: [https://weather-app-ruby-nu.vercel.app/](https://weather-app-ruby-nu.vercel.app/)
 
